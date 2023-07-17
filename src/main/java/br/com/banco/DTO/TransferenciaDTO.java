@@ -3,10 +3,12 @@ package br.com.banco.DTO;
 import java.time.LocalDateTime;
 
 import br.com.banco.entity.Transferencia;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 public class TransferenciaDTO {
 
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDateTime dt;
     private Double valor;
     private String tipo;
