@@ -8,4 +8,6 @@ public interface TransferenciaService {
 
     List<TransferenciaDTO> findAll();
 
+    List<TransferenciaDTO> search(String nomeOperador);
+
 }

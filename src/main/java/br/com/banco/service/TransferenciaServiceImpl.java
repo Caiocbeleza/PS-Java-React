@@ -25,4 +25,13 @@ public class TransferenciaServiceImpl implements TransferenciaService {
 
     }
 
+    @Override
+    public List<TransferenciaDTO> search(String nomeOperador) {
+        if (nomeOperador != null){
+            return repository.search(nomeOperador);
+        }
+        return mapper.toTransferenciaDTO(repository.findAll());
+    }
+
+
 }

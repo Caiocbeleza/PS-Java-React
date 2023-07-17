@@ -3,6 +3,7 @@ package br.com.banco.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,11 @@ public class TransferenciaController {
     private ResponseEntity<List<TransferenciaDTO>> findAll(){
         return ResponseEntity.ok().body(this.service.findAll());
 
+    }
+
+    @GetMapping(value = "/filtrar")
+    public ResponseEntity<List<TransferenciaDTO>> search(@Param("nomeOperador") String nomeOperador){
+        return ResponseEntity.ok().body(this.service.search(nomeOperador));
     }
 
 }
