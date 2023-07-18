@@ -1,33 +1,35 @@
 package br.com.banco.DTO;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import br.com.banco.entity.Transferencia;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 public class TransferenciaDTO {
-
-    @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDateTime dt;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate dt;
     private Double valor;
     private String tipo;
     private String nomeOperador;
 
     public TransferenciaDTO() {}
 
-    public TransferenciaDTO(LocalDateTime dt, Double valor, String tipo, String nomeOperador) {
+    public TransferenciaDTO(LocalDate dt, Double valor, String tipo, String nomeOperador) {
         this.dt = dt;
         this.valor = valor;
         this.tipo = tipo;
         this.nomeOperador = nomeOperador;
     }
 
-    public LocalDateTime getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
-    public void setDt(LocalDateTime dt) {
+    public void setDt(LocalDate dt) {
         this.dt = dt;
     }
 

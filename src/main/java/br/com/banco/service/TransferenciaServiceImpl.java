@@ -1,5 +1,7 @@
 package br.com.banco.service;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.context.annotation.Primary;
@@ -29,6 +31,14 @@ public class TransferenciaServiceImpl implements TransferenciaService {
     public List<TransferenciaDTO> search(String nomeOperador) {
         if (nomeOperador != null){
             return repository.search(nomeOperador);
+        }
+        return mapper.toTransferenciaDTO(repository.findAll());
+    }
+
+    @Override
+    public List<TransferenciaDTO> procurarPorData(LocalDate inicio, LocalDate fim){
+        if (inicio != null && fim != null){
+            return repository.procurarPorData(inicio, fim);
         }
         return mapper.toTransferenciaDTO(repository.findAll());
     }

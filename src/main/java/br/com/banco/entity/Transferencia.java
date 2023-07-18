@@ -1,6 +1,8 @@
 package br.com.banco.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +21,7 @@ public class Transferencia {
 	private Long id;
 	
 	@Column(name = "DATA_TRANSFERENCIA")
-	private LocalDateTime dt;
+	private LocalDate dt;
 	
 	@Column(name = "VALOR")
 	private Double valor;
@@ -41,11 +43,11 @@ public class Transferencia {
 		this.id = id;
 	}
 
-	public LocalDateTime getDt() {
+	public LocalDate getDt() {
 		return dt;
 	}
 
-	public void setDt(LocalDateTime dt) {
+	public void setDt(LocalDate dt) {
 		this.dt = dt;
 	}
 
@@ -85,7 +87,7 @@ public class Transferencia {
 	}
 	
 	@Builder
-	public Transferencia(LocalDateTime dt, Double valor, String tipo, String nomeOperador) {
+	public Transferencia(LocalDate dt, Double valor, String tipo, String nomeOperador) {
 		this.dt = dt;
 		this.valor = valor;
 		this.tipo = tipo;
