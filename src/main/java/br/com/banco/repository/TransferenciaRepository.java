@@ -20,4 +20,7 @@ public interface TransferenciaRepository extends JpaRepository<Transferencia, Lo
     @Query("SELECT t FROM Transferencia t WHERE t.dt >= :inicio AND t.dt <= :fim")
     public List<TransferenciaDTO> procurarPorData(LocalDate inicio, LocalDate fim);
 
+    @Query("SELECT t FROM Transferencia t WHERE (t.nomeOperador LIKE :nomeOperador) AND (t.dt >= :inicio AND t.dt <= :fim)")
+    public List<TransferenciaDTO> procurarConcat(String nomeOperador, LocalDate inicio, LocalDate fim);
+
 }
