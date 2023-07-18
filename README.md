@@ -47,3 +47,6 @@
 - Utilizar o padrão RESTFul para a construção da sua API.
 - Existe um script sql no pacote resources que cotém a modelagem do banco que pode ser seguida, e valores iniciais.
 - Caso julge necessário você poderá criar mais tablas, porém a estrutura inicial não deve ser alterada.
+
+## Testes
+- Para rodar os testes, ir ate a pasta test, clicar com o botão direito no teste que deseja rodar e rodar com JUnit. Foram feitos os teste com os métodos da classe Controller.
