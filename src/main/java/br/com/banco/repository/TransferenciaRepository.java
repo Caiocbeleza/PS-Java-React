@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import br.com.banco.entity.Transferencia;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Repository

@@ -1,10 +1,8 @@
 package br.com.banco.service;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import br.com.banco.DTO.TransferenciaDTO;
 import br.com.banco.repository.TransferenciaRepository;
