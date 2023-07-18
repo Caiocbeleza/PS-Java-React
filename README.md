@@ -49,4 +49,4 @@
 - Caso julge necessário você poderá criar mais tablas, porém a estrutura inicial não deve ser alterada.
 
 ## Testes
-- Para rodar os testes, ir ate a pasta test, clicar com o botão direito no teste que deseja rodar e rodar com JUnit. Foram feitos os teste com os métodos da classe Controller.
+- Para rodar os testes, ir até a pasta test, clicar com o botão direito no teste que deseja rodar e rodar com JUnit. Foram feitos os teste com os métodos da classe Controller.
