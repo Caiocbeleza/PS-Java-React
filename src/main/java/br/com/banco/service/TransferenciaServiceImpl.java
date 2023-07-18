@@ -35,6 +35,18 @@ public class TransferenciaServiceImpl implements TransferenciaService {
         return mapper.toTransferenciaDTO(repository.findAll());
     }
 
+
+    @Override
+    public List<TransferenciaDTO> procurar(String nomeOperador, LocalDate inicio, LocalDate fim) {
+        if (nomeOperador != null){
+            return repository.search(nomeOperador);
+        }
+        if (inicio != null && fim != null){
+            return repository.procurarPorData(inicio, fim);
+        }
+        return mapper.toTransferenciaDTO(repository.findAll());
+    }
+
     @Override
     public List<TransferenciaDTO> procurarPorData(LocalDate inicio, LocalDate fim){
         if (inicio != null && fim != null){

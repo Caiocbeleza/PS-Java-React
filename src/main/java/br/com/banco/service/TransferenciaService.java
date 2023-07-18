@@ -14,4 +14,8 @@ public interface TransferenciaService {
 
     List<TransferenciaDTO> procurarPorData(LocalDate inicio, LocalDate fim);
 
+    List<TransferenciaDTO> procurar(String nomeOperador,LocalDate inicio, LocalDate fim);
+
+
+
 }

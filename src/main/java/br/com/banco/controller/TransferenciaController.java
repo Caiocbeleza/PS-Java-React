@@ -32,14 +32,19 @@ public class TransferenciaController {
 
     }
 
-    @GetMapping(value = "/filtrar")
-    public ResponseEntity<List<TransferenciaDTO>> search(@Param("nomeOperador") String nomeOperador){
-        return ResponseEntity.ok().body(this.service.search(nomeOperador));
-    }
+//    @GetMapping(value = "/filtrar")
+//    public ResponseEntity<List<TransferenciaDTO>> search(@Param("nomeOperador") String nomeOperador){
+//        return ResponseEntity.ok().body(this.service.search(nomeOperador));
+//    }
+//
+//    @GetMapping(value = "/filtrar-data")
+//    public ResponseEntity<List<TransferenciaDTO>> buscarPorData(@RequestParam("inicio") @DateTimeFormat(pattern= "yyyy-MM-dd") LocalDate inicio, @RequestParam("fim") @DateTimeFormat(pattern= "yyyy-MM-dd") LocalDate fim){
+//        return ResponseEntity.ok().body(this.service.procurarPorData(inicio, fim));
+//    }
 
-    @GetMapping(value = "/filtrar-data")
-    public ResponseEntity<List<TransferenciaDTO>> buscarPorData(@RequestParam("inicio") @DateTimeFormat(pattern= "yyyy-MM-dd") LocalDate inicio, @RequestParam("fim") @DateTimeFormat(pattern= "yyyy-MM-dd") LocalDate fim){
-        return ResponseEntity.ok().body(this.service.procurarPorData(inicio, fim));
+    @GetMapping(value = "/procurar-filtros")
+    public ResponseEntity<List<TransferenciaDTO>> procurar(@Param("nomeOperador") String nomeOperador, @Param("inicio") @DateTimeFormat(pattern= "yyyy-MM-dd") LocalDate inicio, @Param("fim") @DateTimeFormat(pattern= "yyyy-MM-dd") LocalDate fim){
+        return ResponseEntity.ok().body(this.service.procurar(nomeOperador, inicio, fim));
     }
 
 }
