@@ -16,6 +16,8 @@ public interface TransferenciaService {
 
     List<TransferenciaDTO> procurar(String nomeOperador,LocalDate inicio, LocalDate fim);
 
+    List<TransferenciaDTO> pegarTodosRegistros();
+
     //List<TransferenciaDTO> procurarConcat(String nomeOperador,LocalDate inicio, LocalDate fim);
 
 
