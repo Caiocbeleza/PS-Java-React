@@ -45,15 +45,7 @@ public class TransferenciaServiceImpl implements TransferenciaService {
         if (nomeOperador != null && inicio == null && fim == null){
             return repository.search(nomeOperador);
         }
-        if (nomeOperador == null && inicio == null && fim == null){
-            return repository.pegarTodosRegistros();
-        }
         return mapper.toTransferenciaDTO(repository.findAll());
-    }
-
-    @Override
-    public List<TransferenciaDTO> pegarTodosRegistros() {
-        return repository.pegarTodosRegistros();
     }
 
     @Override
